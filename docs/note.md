@@ -18,30 +18,25 @@ l'@ip correspondant à un nom donnée pour y accèder.
 
 # OpenFeign
 
-Discution entre microservices de façon déclarative. 
+Discution entre microservices de façon déclarative.
 
-# Questions
+# Microservices ayant besoin de toutes les BDD
 
-## Microservices ayant besoin de toutes les BDD
-
-## Pom.xml
+# Pom.xml
 On fait comme on veut.
 Inheritance conseiller
 
-## Securité
+# Securité
 Créer un microservice d'authentication/autorization
 Utilisation d'un microservice gateway/proxy, kong/spring gateway
 
-## Voir les projections de spring
+Voir si Spring Security activer sur tout les microservices.
+Un microservice d'authentication (Créer un token)
+
+# Voir les projections de spring
 @Projectoin(name = "customer_projection", types = {Customer.class})
+Vs DTO ? Utilité ?
 
-# Exercice
+# Recherche Multicritere
 
-## Definition du besoin en microservice
-Client
-Produit
-Stockage
-Commande
-Fournisseur
-Livraison
-Transporteur
+Voir GraphQL ?

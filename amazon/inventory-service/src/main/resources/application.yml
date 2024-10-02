@@ -3,18 +3,19 @@
 # =======================================================================
 spring:
   application:
-    name: customer-service
+    name: inventory-service
   cloud:
     config:
       enabled: false
     discovery:
       enabled: true
+    gateway:
+      enabled: true
   h2:
-      console:
-        enabled: true
+    console:
+      enabled: true
   datasource:
-    url: jdbc:h2:mem:customer-db
-    username: customer-service
+    url: jdbc:h2:mem:inventory-db
 
 eureka:
   instance:
@@ -24,4 +25,4 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 server:
-  port: 8081
+  port: 8082
