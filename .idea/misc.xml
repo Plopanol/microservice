@@ -5,14 +5,16 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/amazon/pom.xml" />
+        <option value="$PROJECT_DIR$/buyme-ms-architecture/pom.xml" />
+        <option value="$PROJECT_DIR$/amazon/customer-service/pom.xml" />
+        <option value="$PROJECT_DIR$/amazon/inventory-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/amazon/customer-service/pom.xml" />
         <option value="$PROJECT_DIR$/amazon/discover-servicer/pom.xml" />
-        <option value="$PROJECT_DIR$/amazon/inventory-service/pom.xml" />
         <option value="$PROJECT_DIR$/amazon/product/pom.xml" />
+        <option value="$PROJECT_DIR$/buyme-ms-architecture/pom.xml" />
       </set>
     </option>
   </component>

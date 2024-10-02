@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: order-service
+  cloud:
+    config:
+      enabled: true
+    discovery:
+      enabled: true
+    gateway:
+      enabled: true
+  config:
+    import: optional:configserver:http://localhost:9999
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defautlZdone: http://localhost:8761/eureka
+
+server:
+  port: 8083
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include: "*"

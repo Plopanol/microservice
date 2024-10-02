@@ -11,3 +11,9 @@ eureka:
     register-with-eureka: false # Do not register itself in the service registry
 server:
   port: 8761
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include: "*"

@@ -6,6 +6,11 @@ Donc le FCRT utilisera le broker Kafka pour recuperer les informations completes
 Pourquoi pas faire que les microservices crée automatiquement toutes les entrées des FCRT et que le microservices 
 FCRT aggrège le tout.
 
+# Configuration
+
+Utilisation d'un projet maven de configuration sur un repo.
+Voir projet config de la formation.
+
 # SpringCloud
 
 Voir Spring Cloud Kubernetes
@@ -19,8 +24,12 @@ l'@ip correspondant à un nom donnée pour y accèder.
 # OpenFeign
 
 Discution entre microservices de façon déclarative.
+Creation d'une interface reprenant le controller du rest à appeller avec l'annotation @FeignClient(name="NOM-SERVICE-CLIENT")
 
 # Microservices ayant besoin de toutes les BDD
+
+# Discovery - Gateway
+On utilisera une decouverte dynamique, ce qui obligera le client à connaitre le nom du MICROSERVICE/service
 
 # Pom.xml
 On fait comme on veut.
@@ -34,7 +43,7 @@ Voir si Spring Security activer sur tout les microservices.
 Un microservice d'authentication (Créer un token)
 
 # Voir les projections de spring
-@Projectoin(name = "customer_projection", types = {Customer.class})
+@Projection(name = "customer_projection", types = {Customer.class})
 Vs DTO ? Utilité ?
 
 # Recherche Multicritere
