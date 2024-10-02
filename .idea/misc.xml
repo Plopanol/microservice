@@ -9,7 +9,9 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/amazon/customer-service/pom.xml" />
         <option value="$PROJECT_DIR$/amazon/discover-servicer/pom.xml" />
+        <option value="$PROJECT_DIR$/amazon/inventory-service/pom.xml" />
         <option value="$PROJECT_DIR$/amazon/product/pom.xml" />
       </set>
     </option>

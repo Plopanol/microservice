@@ -16,8 +16,6 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>customer-service</module>
-        <module>inventory-service</module>
         <module>discovery-service</module>
         <module>gateway-service</module>
     </modules>
