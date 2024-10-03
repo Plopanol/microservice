@@ -13,6 +13,9 @@ Kafka Stream
 Utilisation d'un projet maven de configuration sur un repo.
 Voir projet config de la formation.
 
+Voir aussi Izanami en remplacement de SpringCloud Config avec des fonctionnalités différentes comme switch/desactivation
+de fonctionnalités.
+
 # SpringCloud
 
 Voir Spring Cloud Kubernetes
@@ -27,6 +30,13 @@ l'@ip correspondant à un nom donnée pour y accèder.
 
 Discution entre microservices de façon déclarative.
 Creation d'une interface reprenant le controller du rest à appeller avec l'annotation @FeignClient(name="NOM-SERVICE-CLIENT")
+
+
+# Resilience4j -SpringCloud Circuit Breaker
+Fait office de RestHandlerError pour Feign
+Voir example dans le classe ProductRestClient
+https://www.baeldung.com/spring-cloud-circuit-breaker
+Le circuitBreaker doit renvoyé une exception et sera catch par le HandlerException ?
 
 # Microservices ayant besoin de toutes les BDD
 
@@ -67,6 +77,9 @@ Voir application.yml du gateway-service.
 Ce qui permet d'acceder directement au services rest en appelant uniquement l'url du gateway
 example :
 http://localhost:8080/customers
+
+# Security
+Activer le Vault, SSL ...
 
 # Pom.xml
 On fait comme on veut.

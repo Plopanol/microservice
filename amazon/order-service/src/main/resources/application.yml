@@ -8,9 +8,11 @@ spring:
       enabled: true
     gateway:
       enabled: true
+    openfeign:
+      circuitbreaker:
+        enabled: true
   config:
     import: optional:configserver:http://localhost:9999
-
 eureka:
   instance:
     prefer-ip-address: true

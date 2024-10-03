@@ -6,6 +6,7 @@ import com.improvemyskills.orderservice.entity.OrderPurshase;
 import com.improvemyskills.orderservice.models.Customer;
 import com.improvemyskills.orderservice.models.Product;
 import com.improvemyskills.orderservice.service.OrderService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.hateoas.PagedModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class OrderController {
     ProductRestClient productRestClient;
     OrderService orderService;
 
-    public OrderController(CustomerRestClient customerRestClient, ProductRestClient productRestClient, OrderService orderService) {
+    public OrderController(CustomerRestClient customerRestClient, @Qualifier("com.improvemyskills.orderservice.clients.ProductRestClient") ProductRestClient productRestClient, OrderService orderService) {
         this.customerRestClient = customerRestClient;
         this.productRestClient = productRestClient;
         this.orderService = orderService;
@@ -36,6 +37,11 @@ public class OrderController {
     @GetMapping("/products")
     public ResponseEntity<Collection<Product>> getProductRestClient() {
         return productRestClient.getAll();
+    }
+
+    @GetMapping("/products/{id}")
+    public ResponseEntity<Product> getProductIdRestClient(@PathVariable Long id) {
+        return productRestClient.getProduct(id);
     }
 
     @PostMapping("/orders")
