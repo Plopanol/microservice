@@ -5,8 +5,11 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ImproveMySkills/config-repo
-          #uri: file:///C:\Users\ahabouba\IdeaProjects\config-repo
+          #uri: https://github.com/ImproveMySkills/config-repo
+          uri: file:///C:/javafx11/Source/config-cloud
+          refresh-rate: 5
+    refresh:
+      enabled: true
 
 server:
   port: 9999

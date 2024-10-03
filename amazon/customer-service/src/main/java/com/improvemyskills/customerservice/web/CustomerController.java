@@ -1,6 +1,7 @@
 package com.improvemyskills.customerservice.web;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
+@RefreshScope
 public class CustomerController {
 
     @Value("${global.params.p1}")
@@ -22,6 +24,6 @@ public class CustomerController {
         System.out.println("It's work !");
         System.out.println("P1 : "+p1);
         System.out.println("P2 : "+p2);
-        return new ResponseEntity<>(Map.of("p1", p1, "P2", p2), HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(Map.of("p1", p1, "P2", p2), HttpStatus.OK);
     }
 }

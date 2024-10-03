@@ -28,6 +28,12 @@ public class ProductController {
     @GetMapping("/products")
     ResponseEntity<List<ProductDto>> getAll(){
         List<ProductDto> productDtoList = productService.getAllProducts();
+        try {
+            // TODO Pour le test de timeout
+            Thread.sleep(60000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         return new ResponseEntity<>(productDtoList, HttpStatus.OK);
     }
 
