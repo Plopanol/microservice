@@ -61,9 +61,17 @@ SpringBatch avec jdbc directe sur les BDD des autres micorservices.
 # Security
 Activer le Vault, SSL ...
 
-# Pom.xml
+# Pom.xml / Architecture
 On fait comme on veut.
 Inheritance conseiller
+
+    Projet
+     Microservice 1
+     Microservice 2
+     Gateway
+     Eureka
+     Config
+     Securite
 
 # Securité
 
@@ -78,9 +86,10 @@ Les autres microservice auront springsecurity d'activé mais redirigeront vers c
 n'est pas valide.
 
 
-# Voir les projections de spring
+# Projection auto generer par rest data
+Si une projection spring est annoté avec celle ci-dessous, cela va créer automatiquement un endpoint
+http://localhost:8081/customers?projection=customer_projection 
 @Projection(name = "customer_projection", types = {Customer.class})
-Vs DTO ? Utilité ?
 
 # Recherche Multicritere
 
@@ -104,6 +113,7 @@ Voir classe DiscoveryClientRouteConfiguration.java
 
 ## Routage Manuel
 Voir application.yml du gateway-service.
+On peut filtrer des routes avec des filtres comme Before, After, Between: Date
 
     gateway:
       routes:
