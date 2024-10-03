@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -44,12 +45,23 @@ public class OrderController {
 
     @GetMapping("/orders")
     public ResponseEntity<Collection<OrderPurshase>> getOrders(){
-        /*PagedModel<Customer> customers = customerRestClient.getAllCustomers();
-        Collection<Product> products = productRestClient.getAll();
-        Collection<OrderPurshase> orders = orderService.getAllOrders().stream()
-                .forEach(orderPurshase -> {
-                });*/
-        return null;
+        PagedModel<Customer> customers = customerRestClient.getAllCustomers();
+        ResponseEntity<Collection<Product>> products = productRestClient.getAll();
+        Collection<OrderPurshase> orders = orderService.getAllOrders();
+        for(OrderPurshase orderPurshase : orders){
+            for(Customer customer : customers){
+                if ( orderPurshase.getCustomerId().equals(customer.getId())){
+                    orderPurshase.setCustomer(customer);
+                }
+            }
+            orderPurshase.setProducts(new ArrayList<>());
+            for(Product product : products.getBody()) {
+                if (orderPurshase.getProductIds().contains(product.getId())){
+                    orderPurshase.getProducts().add(product);
+                }
+            }
+        }
+        return new ResponseEntity<>(orders, HttpStatus.OK);
     }
 
 

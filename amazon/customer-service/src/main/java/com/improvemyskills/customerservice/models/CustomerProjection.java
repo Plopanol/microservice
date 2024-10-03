@@ -9,5 +9,4 @@ interface CustomerProjection {
     String getFirstName();
     String getLastName();
     String getEmail();
-
 }
